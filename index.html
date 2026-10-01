@@ -1,0 +1,199 @@
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para Matías Solís ❤️</title>
+
+    <!-- Meta Tags para Previsualización en WhatsApp -->
+    <meta property="og:title" content="Para Matías Solís ❤️">
+    <meta property="og:description" content="Tengo una sorpresa especial para ti. Ingresa para verla ❤️">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #f8fafc;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+        .font-marker {
+            font-family: 'Permanent Marker', cursive;
+        }
+        .card-hotwheels-blue {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+            border: 3px solid #38bdf8;
+            box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.5);
+        }
+        .hw-badge-blue {
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: 800;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center p-4">
+
+    <!-- PANTALLA DE BLOQUEO (CÓDIGO 04) -->
+    <div id="login-screen" class="w-full max-w-md my-auto text-center fade-in">
+        <div class="mb-6">
+            <span class="text-5xl">🏎️️</span>
+            <h1 class="text-3xl font-bold mt-2 text-sky-400">Para Matías Solís ❤️</h1>
+            <p class="text-sm text-slate-300 mt-1">Ingresa el código secreto para continuar</p>
+        </div>
+
+        <div class="bg-slate-800/90 backdrop-blur p-6 rounded-2xl shadow-2xl border border-sky-500/30">
+            <input type="text" id="access-code" maxlength="2" placeholder="00" 
+                   class="w-32 text-center text-4xl font-bold tracking-widest p-3 bg-slate-900 text-sky-400 border-2 border-sky-400 rounded-xl focus:outline-none focus:border-sky-300 mb-4 uppercase">
+            
+            <button onclick="checkCode()" 
+                    class="w-full bg-sky-500 hover:bg-sky-600 text-slate-950 font-bold py-3 rounded-xl shadow-lg transition transform active:scale-95">
+                Abrir Sorpresa ❤️
+            </button>
+            <p id="error-msg" class="text-red-400 text-xs font-semibold mt-3 hidden">Código incorrecto. ¡Inténtalo de nuevo!</p>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="main-content" class="w-full max-w-lg hidden fade-in py-6">
+        
+        <!-- ENCABEZADO -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-sky-400 font-marker">Para Matías Solís ❤️</h1>
+            <p class="text-slate-300 mt-2 font-cursive text-2xl">Toca cada auto para descubrir tu mensaje</p>
+        </header>
+
+        <!-- TARJETAS HOT WHEELS -->
+        <div class="space-y-6">
+
+            <!-- CARRITO 1 -->
+            <div class="card-hotwheels-blue p-5 rounded-2xl text-white cursor-pointer transition transform hover:scale-102" onclick="toggleCard(1)">
+                <div class="flex justify-between items-center">
+                    <span class="hw-badge-blue px-3 py-1 rounded-full text-xs uppercase tracking-wider">Auto #1</span>
+                    <i class="fas fa-chevron-down" id="icon-1"></i>
+                </div>
+                <div class="mt-3 flex items-center gap-4">
+                    <span class="text-4xl">🚗</span>
+                    <h3 class="font-bold text-lg text-sky-200">Un camino juntos</h3>
+                </div>
+                <div id="content-1" class="hidden mt-4 pt-4 border-t border-sky-400/40 text-sky-100 font-medium text-base">
+                    "Si tuviera que nacer de nuevo, le pediría a la vida que me lleve por el mismo camino donde te encontré."
+                </div>
+            </div>
+
+            <!-- CARRITO 2 -->
+            <div class="card-hotwheels-blue p-5 rounded-2xl text-white cursor-pointer transition transform hover:scale-102" onclick="toggleCard(2)">
+                <div class="flex justify-between items-center">
+                    <span class="hw-badge-blue px-3 py-1 rounded-full text-xs uppercase tracking-wider">Auto #2</span>
+                    <i class="fas fa-chevron-down" id="icon-2"></i>
+                </div>
+                <div class="mt-3 flex items-center gap-4">
+                    <span class="text-4xl">🏎️</span>
+                    <h3 class="font-bold text-lg text-sky-200">Tu valentía</h3>
+                </div>
+                <div id="content-2" class="hidden mt-4 pt-4 border-t border-sky-400/40 text-sky-100 font-medium text-base">
+                    "No me quitaste mis miedos, me diste la mano para cruzarlos, y desde entonces camino más valiente."
+                </div>
+            </div>
+
+            <!-- CARRITO 3 -->
+            <div class="card-hotwheels-blue p-5 rounded-2xl text-white cursor-pointer transition transform hover:scale-102" onclick="toggleCard(3)">
+                <div class="flex justify-between items-center">
+                    <span class="hw-badge-blue px-3 py-1 rounded-full text-xs uppercase tracking-wider">Auto #3</span>
+                    <i class="fas fa-chevron-down" id="icon-3"></i>
+                </div>
+                <div class="mt-3 flex items-center gap-4">
+                    <span class="text-4xl">🛞</span>
+                    <h3 class="font-bold text-lg text-sky-200">Mi refugio</h3>
+                </div>
+                <div id="content-3" class="hidden mt-4 pt-4 border-t border-sky-400/40 text-sky-100 font-medium text-base">
+                    "Soy fuerte porque tengo donde caer, y ese lugar sos vos."
+                </div>
+            </div>
+
+            <!-- CARRITO 4 -->
+            <div class="card-hotwheels-blue p-5 rounded-2xl text-white cursor-pointer transition transform hover:scale-102" onclick="toggleCard(4)">
+                <div class="flex justify-between items-center">
+                    <span class="hw-badge-blue px-3 py-1 rounded-full text-xs uppercase tracking-wider">Auto #4</span>
+                    <i class="fas fa-chevron-down" id="icon-4"></i>
+                </div>
+                <div class="mt-3 flex items-center gap-4">
+                    <span class="text-4xl">🏁</span>
+                    <h3 class="font-bold text-lg text-sky-200">Tu calma</h3>
+                </div>
+                <div id="content-4" class="hidden mt-4 pt-4 border-t border-sky-400/40 text-sky-100 font-medium text-base">
+                    "Amo como abrazas mis defectos en vez de señalarlos, como me calmas cuando ni yo me aguanto."
+                </div>
+            </div>
+
+            <!-- CARRITO 5 -->
+            <div class="card-hotwheels-blue p-5 rounded-2xl text-white cursor-pointer transition transform hover:scale-102" onclick="toggleCard(5)">
+                <div class="flex justify-between items-center">
+                    <span class="hw-badge-blue px-3 py-1 rounded-full text-xs uppercase tracking-wider">Auto #5</span>
+                    <i class="fas fa-chevron-down" id="icon-5"></i>
+                </div>
+                <div class="mt-3 flex items-center gap-4">
+                    <span class="text-4xl">🏆</span>
+                    <h3 class="font-bold text-lg text-sky-200">8 Años</h3>
+                </div>
+                <div id="content-5" class="hidden mt-4 pt-4 border-t border-sky-400/40 text-sky-100 font-medium text-base">
+                    "Después de 8 años entendí que el amor no es encontrar a alguien perfecto, es encontrar a alguien que hace perfecto mi mundo, y ese sos vos."
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="text-center mt-10 text-slate-400 text-xs">
+            Hecho con todo mi amor ❤️
+        </footer>
+    </div>
+
+    <!-- SCRIPT DE FUNCIONAMIENTO -->
+    <script>
+        function checkCode() {
+            const input = document.getElementById('access-code').value.trim();
+            const errorMsg = document.getElementById('error-msg');
+            
+            // CÓDIGO DE ACCESO DEFINIDO EN 04
+            if (input === '04') {
+                document.getElementById('login-screen').classList.add('hidden');
+                document.getElementById('main-content').classList.remove('hidden');
+            } else {
+                errorMsg.classList.remove('hidden');
+            }
+        }
+
+        function toggleCard(id) {
+            const content = document.getElementById(`content-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+            }
+        }
+    </script>
+</body>
+</html>
